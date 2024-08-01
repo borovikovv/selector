@@ -1,0 +1,22 @@
+.card {
+  padding: 5px 0px;
+  border: 1px solid rgba(109, 114, 120, 0.26);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-self: start;
+  max-height: 20vh;
+  min-width: 20vw;
+  width: 20vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.option {
+  color: #63625f;
+  list-style-type: none;
+  padding: 5px 10px;
+}
+p.info {
+  color: #f88d34;
+  font-weight: 400;
+}

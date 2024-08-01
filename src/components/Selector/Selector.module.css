@@ -1,0 +1,59 @@
+.select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+}
+.header {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+.input {
+  min-height: 2em;
+}
+.options {
+  visibility: hidden;
+  position: absolute;
+  width: 15em;
+  left: 0px;
+  top: 53px;
+  border-radius: 5px;
+  border: 1px solid rgba(109, 114, 120, 0.26);
+  box-shadow: 0 12px 12px 1px rgba(0, 0, 0, 0.1);
+  max-height: 15em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style-type: none;
+  padding: 0;
+}
+.option {
+  width: 100%;
+  color: #000000;
+  cursor: pointer;
+  padding: 5px 0px;
+  text-align: left;
+  padding: 7px 10px;
+}
+.option:hover {
+  background-color: #f0f0f0;
+}
+.selected {
+  color: #646cffaa;
+}
+.logo {
+  width: 14px;
+  height: 14px;
+  padding-left: 30px;
+}
+.remove {
+  width: 20px;
+  height: 20px;
+  padding-left: 50px;
+}
+.visible {
+  visibility: visible;
+}
