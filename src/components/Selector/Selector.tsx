@@ -25,7 +25,6 @@ export default function Selector({ data, onSelect, onDelete }: SelectorProps) {
 
   const handleSelect = (event: React.MouseEvent<HTMLLIElement>, option: Option) => {
     event.stopPropagation();
-    setSearchValue("");
     onSelect(option);
     setSelectedOptions({
       ...selectedOptions,
