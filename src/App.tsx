@@ -17,7 +17,6 @@ function App() {
         icon: logo,
         label: `${getRandomWord(idx)} ${idx + 1}`,
         id: String(idx + 1),
-        isActive: false,
       }))
     );
   }, []);

@@ -3,6 +3,7 @@ import clx from 'classnames';
 import { OptionListType } from "./types";
 import DeleteIcon from '../../assets/close.svg';
 import { useScrollingRender } from "../../hooks/useScrollingRender";
+import { HighlightMatches } from "../HighlightsMatches";
 
 import styles from './Selector.module.css';
 
@@ -41,7 +42,7 @@ const OptionsList = memo(
                 })}
                 key={option.id}
               >
-                {option.label}
+                <HighlightMatches label={option.label} searchText={searchValue} />
                 <img
                   src={option.icon}
                   className={styles.logo}

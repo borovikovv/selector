@@ -2,7 +2,6 @@ export type Option = {
   label: string;
   icon: string;
   id: string;
-  isActive: boolean;
 }
 
 export type SelectorProps = {
