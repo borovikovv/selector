@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Option } from './components/Selector/types';
 import SelectedOptionsList from './components/SelectedOptionList/SelectedOptionsList';
 import Selector from './components/Selector/Selector';
@@ -22,15 +22,15 @@ function App() {
     );
   }, []);
 
-  const handleDelete = (id: string) => {
+  const handleDelete = useCallback((id: string) => {
     setSelectedOptions(selectedOptions.filter(item => item.id !== id));
-  }
+  }, [selectedOptions]);
 
-  const handleSelect = (option: Option) => {
+  const handleSelect = useCallback((option: Option) => {
     const isOptionExist = selectedOptions.some(opt => opt.id === option.id);
     if(isOptionExist) return;
     setSelectedOptions([...selectedOptions, option]);
-  }
+  }, [selectedOptions]);
 
   return (
     <div className='main'>

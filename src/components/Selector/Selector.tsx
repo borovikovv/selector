@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { useClickOutside } from '../../hooks/useClickOutside';
 
 import styles from './Selector.module.css';
@@ -21,18 +21,18 @@ export default function Selector({ data, onSelect, onDelete }: SelectorProps) {
   const handleChangeSearchValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setSearchValue(value);
-  }
+  };
 
-  const handleSelect = (event: React.MouseEvent<HTMLLIElement>, option: Option) => {
+  const handleSelect = useCallback((event: React.MouseEvent<HTMLLIElement>, option: Option) => {
     event.stopPropagation();
     onSelect(option);
     setSelectedOptions({
       ...selectedOptions,
       [option.id]: true,
     });
-  }
+  }, [selectedOptions, onSelect])
   
-  const handleDelete = (event: React.MouseEvent<HTMLImageElement>,id: string) => {
+  const handleDelete = useCallback((event: React.MouseEvent<HTMLImageElement>, id: string) => {
     event.stopPropagation();
     onDelete(id);
     
@@ -40,7 +40,7 @@ export default function Selector({ data, onSelect, onDelete }: SelectorProps) {
     delete opt[id];
 
     setSelectedOptions({...opt});
-  }
+  }, [selectedOptions, onDelete]);
 
   return (
     <div className={styles.select}>
