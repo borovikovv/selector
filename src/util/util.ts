@@ -12,6 +12,5 @@ export function getRandomWord() {
     9: "Smart",
   };
   const randomNum: number = Math.floor(Math.random() * 10);
-  console.log(randomNum);
   return words[randomNum];
 }
