@@ -4,7 +4,7 @@ import styles from './HighlightMatches.module.css';
 export function HighlightMatches ({ label, searchText }: HighlightMatchesProps) {
   const index = label.toLowerCase().indexOf(searchText.toLocaleLowerCase());
 
-  if (!label || !searchText) {
+  if (!searchText) {
     return label;
   }
 

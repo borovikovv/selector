@@ -15,7 +15,7 @@ function App() {
     setOptions(
       Array.from({ length: 10000 }, (_, idx) => ({
         icon: logo,
-        label: `${getRandomWord(idx)} ${idx + 1}`,
+        label: `${getRandomWord()} ${idx + 1}`,
         id: String(idx + 1),
       }))
     );

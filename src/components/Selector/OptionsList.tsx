@@ -42,7 +42,7 @@ const OptionsList = memo(
                 })}
                 key={option.id}
               >
-                <HighlightMatches label={option.label} searchText={searchValue} />
+                <HighlightMatches label={option.label} searchText={deferredValue} />
                 <img
                   src={option.icon}
                   className={styles.logo}
